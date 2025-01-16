@@ -1,0 +1,37 @@
+            "panel.background": "#fff",
+            "sideBar.background": "#fff",
+            "terminal.background": "#fff",
+            "terminal.foreground": "#000"
+          },
+          "editor.lineHighlightBorder": "#0000",
+          "editorError.foreground": "#0000",
+          "editorGutter.addedBackground": "#0000",
+          "editorGutter.deletedBackground": "#0000",
+          "editorGutter.modifiedBackground": "#0000",
+          "editorWarning.foreground": "#0000"
+        },
+        "workbench.editor.closeOnFileDelete": true,
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.untitled.hint": "hidden",
+        "workbench.iconTheme": "vs-minimal",
+        "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+        "workbench.preferredLightColorTheme": "GitHub Light Default",
+        "workbench.startupEditor": "none",
+        "workbench.statusBar.visible": false,
+        "workbench.tips.enabled": false,
+        "workbench.welcomePage.walkthroughs.openOnInstall": false
+      }
+    }
+  },	
+	"name": "Image",
+	"build": {
+                "dockerfile": "Dockerfile"
+
+	},
+	"overrideCommand": false,
+	"privileged": true,
+	"securityOpt": ["seccomp=unconfined"],
+	"capAdd": ["ALL"],
+	"runArgs": ["--volume","/dev/shm:/dev/shm","--volume","/var/run/dbus:/var/run/dbus","--interactive","--tty","--volume","/sys/fs/cgroup:/sys/fs/cgroup","--cgroupns=host","--volume","/lib/modules:/lib/modules","--volume","/boot:/boot"]
+
+ }
